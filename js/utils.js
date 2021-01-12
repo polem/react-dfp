@@ -4,7 +4,8 @@ function doloadGPTScript(resolve, reject) {
 
   const scriptTag = document.createElement('script');
   scriptTag.src = `${document.location.protocol}//securepubads.g.doubleclick.net/tag/js/gpt.js`;
-  scriptTag.async = true;
+  // scriptTag.async = true;
+  scriptTag.defer = true;
   scriptTag.type = 'text/javascript';
   scriptTag.onerror = function scriptTagOnError(errs) {
     reject(errs);
